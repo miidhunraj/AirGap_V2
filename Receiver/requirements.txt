@@ -1,0 +1,15 @@
+flask==3.0.3
+flask-cors==4.0.1
+waitress==3.0.0
+pyautogui==0.9.54
+keyboard==0.13.5
+mouse==0.7.1
+Pillow==10.3.0
+qrcode==7.4.2
+pynput==1.7.7
+pyperclip==1.8.2
+psutil==5.9.8
+pygetwindow==0.0.9
+comtypes==1.4.1
+pycaw==20240210
+winsdk==1.0.0b10
