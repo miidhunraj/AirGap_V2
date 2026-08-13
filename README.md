@@ -1,8 +1,8 @@
 # AirGap Connect
 
-**Control your PC from your phone — over your own Wi‑Fi, nothing else.**
+**Control your PC from your phone — over your Wi‑Fi, nothing else.**
 
-AirGap turns any phone or tablet browser into a premium remote control for your Windows computer: trackpad, keyboard, media, presentations, power, and more — served by a lightweight local Flask receiver. No cloud, no accounts, no internet dependency.
+AirGap turns any phone or tablet browser into a remote control for your Windows computer: trackpad, keyboard, media, presentations, power, and more — served by a lightweight local Flask receiver. No cloud, no accounts, no internet dependency.
 
 <p align="center">
   <img src="Receiver/app_build/icon-512x512.png" width="96" alt="AirGap icon">
@@ -52,9 +52,6 @@ AirGap turns any phone or tablet browser into a premium remote control for your 
 - Installable as a Progressive Web App (add to home screen, works offline for the UI shell)
 - Fullscreen mode, locked to **portrait** — rotate back if your device tips into landscape
 - A branded **AirGap Connect** popup window shows a QR code + the direct URL as soon as the receiver starts, so pairing your phone takes one scan
-
-### ℹ️ Info menu
-Next to the fullscreen button: **Help**, **About**, and **Buy Me a Coffee** — quick links to this repo and its docs.
 
 ---
 
@@ -174,7 +171,7 @@ exactly what's available in your environment.
 
 - Everything runs on your local network — no cloud services, no analytics, no external dependencies for core functionality.
 - The receiver never stores or transmits your Windows credentials. Features like Wake Screen and Lock only call the equivalent local Windows APIs; nothing simulates typing a password.
-- Destructive power actions (Restart, Shutdown, Hibernate, Log Off) and application termination always require confirmation in the UI.
+- Destructive power actions (Restart, Shutdown, Hibernate, Log Off) always require confirmation in the UI.
 - Anyone on your Wi-Fi network who reaches port `5005` can control the PC — treat your Wi-Fi like you would any other trusted local network (e.g. avoid running this on public/shared networks).
 
 ---
@@ -207,9 +204,4 @@ Contributions and issues are welcome — see the [repo](https://github.com/miidh
 If AirGap saves you a walk across the room, consider buying me a coffee:
 
 **[buymeacoffee.com/miidhunraj](https://www.buymeacoffee.com/miidhunraj)**
-
----
-
-## 📄 License
-
-Add your license of choice here (e.g. MIT) before publishing.
+**[instagram.com/miidhunee](https://instagram.com/miidhunee)**
