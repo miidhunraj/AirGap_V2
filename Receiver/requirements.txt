@@ -1,0 +1,50 @@
+# AirGap V2 — Receiver dependencies
+#
+# Supported Python range: 3.8 - 3.13 (verified against published wheel/ABI
+# metadata on PyPI -- see the compatibility notes below and in README.md).
+# Python 3.8 is end-of-life upstream; 3.10-3.12 is the recommended range.
+#
+# Every pin here was checked against PyPI's release metadata for the exact
+# platform tags it ships (Windows wheels / stable-ABI coverage), not just
+# "latest version installed cleanly on my machine."
+
+# --- Web server ---------------------------------------------------------
+flask==3.0.3              # py3-none-any, requires_python >=3.8
+flask-cors==4.0.1          # py2.py3-none-any, no version ceiling
+waitress==3.0.0            # py3-none-any, requires_python >=3.8
+
+# --- Input automation (mouse/keyboard/typing) ---------------------------
+pyautogui==0.9.54          # pure Python, no compiled ABI ceiling
+
+# --- Imaging / QR ---------------------------------------------------------
+# Pillow 10.3.0 has NO Python 3.13 wheel and will fail to install on 3.13
+# without a full C build toolchain. 10.4.0 is the earliest release with
+# cp313 wheels while still covering back to 3.8, so it's the widest-range
+# safe pin available.
+Pillow==10.4.0             # wheels: cp38, cp39, cp310, cp311, cp312, cp313
+qrcode==7.4.2               # py3-none-any, requires_python >=3.7
+
+# --- Clipboard --------------------------------------------------------------
+pyperclip==1.8.2            # pure Python, no compiled ABI ceiling
+
+# --- System / process info -------------------------------------------------
+# 5.9.8 ships a cp37-abi3 wheel: the identical compiled binary is loaded
+# unmodified by every CPython 3.7+ interpreter via the stable ABI, so this
+# one pin is verified to work across the whole supported range without a
+# version-specific rebuild.
+psutil==5.9.8
+
+# --- Windows audio / COM -----------------------------------------------------
+comtypes==1.4.1             # py3-none-any, no version ceiling
+pycaw==20240210             # py3-none-any, no version ceiling
+
+# --- Windows "Now Playing" media metadata (optional capability) -------------
+# winsdk 1.0.0b10 is the only release ever published and it has no cp313
+# wheel -- installing it on Python 3.13 would require building WinRT/C++
+# bindings from source, which is impractical for a typical user. Rather
+# than fail the ENTIRE install over one optional feature, this line is
+# skipped by pip automatically on 3.13+ via the environment marker below.
+# media_controller.get_now_playing() already handles the missing import
+# gracefully at runtime (returns "nothing playing" instead of erroring),
+# so the rest of AirGap is unaffected either way.
+winsdk==1.0.0b10; python_version < "3.13"
