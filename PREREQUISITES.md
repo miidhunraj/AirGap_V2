@@ -49,17 +49,7 @@ All handled automatically by `easy_start.bat` (or `pip install -r Receiver/requi
 
 ---
 
-## 4. What you do *not* need
-
-- ❌ A GitHub account, cloud account, or any sign-in
-- ❌ Node.js, npm, or any JS build tooling (the frontend is plain HTML/CSS/JS)
-- ❌ Visual Studio / a C++ build toolchain (every pinned dependency ships prebuilt Windows wheels within the supported Python range)
-- ❌ Admin rights on the *phone*
-- ❌ Internet access after the first-time setup
-
----
-
-## 5. Quick self-check
+## 4. Quick self-check
 
 Run this any time to get a live report of exactly what's available in your environment:
 
@@ -69,11 +59,3 @@ python verify_install.py
 ```
 
 It checks Python version, every required package, the Windows-only automation stack, and the optional Now Playing capability — and tells you plainly what will and won't work.
-
----
-
-## 6. Known limitations (by design, not bugs)
-
-- **Now Playing thumbnails** don't work on Python 3.13 (see README → Compatibility) — everything else does.
-- **Wake Screen** turns the display back on but cannot type your Windows password or bypass a locked lock screen — AirGap never stores or transmits credentials.
-- Anyone on your Wi-Fi network who can reach port `5005` can control the PC — treat your network like any other trusted local network.
